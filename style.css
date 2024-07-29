@@ -1,0 +1,2003 @@
+/* importation de font family poppins */
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap);
+/* ALL ELEMENTS  */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+/* CSS VARIABLES */
+:root{
+  --primaryColor:#55e6a5;
+  --bodyBg:#02050a;
+  --bgColor:#09101a;
+  --grayColor:#191e25;
+  --bodyColor:#a2a2a2;
+  --colorWhite:#ffff;
+  --colorBlack:#02050a;
+}
+/* ====================================DEFAULT STYLES ============================ */
+html{
+  scroll-behavior: smooth;
+}
+body{
+  background-color: var(--bodyBg);
+  color: var(--colorWhite);
+  font-family: 'poppins ',sans-serif;
+  transition: background .5s ease-in-out;
+}
+body.bodyBgChanged{
+  background-color: var(--colorWhite);
+  color: var(--colorBlack);
+}
+/* ================================== style de toutes les section pour changer les couleur ============== */
+  body.bodyBgChanged .navbar .container{
+    background-color: var(--colorWhite);
+  }
+  body.bodyBgChanged .navbar .container.Active-bg{
+    background-color: var(--colorBlack);
+  }
+  body.bodyBgChanged .navbar .container .links ul li a{
+    color: var(--colorBlack);
+  }
+  body.bodyBgChanged .navbar .container.Active-bg .links ul li a{
+    color: var(--colorWhite);
+  }
+  body.bodyBgChanged .navbar .container .links ul.LinksShowed li a{
+    color: var(--colorWhite);
+  }
+  body.bodyBgChanged .navbar .container .links ul li a:hover{
+    color: var(--primaryColor);
+  }
+  
+  body.bodyBgChanged .navbar .container .links ul .sombre i{
+    color: var(--colorBlack);
+  }
+  body.bodyBgChanged .navbar .container.Active-bg .links ul .sombre i{
+    color: var(--colorWhite);
+  }
+  body.bodyBgChanged .navbar .container .toggle-btn i{
+    color: var(--colorBlack);
+  }
+  body.bodyBgChanged .navbar .container.Active-bg .toggle-btn i{
+    color: var(--colorWhite);
+  }
+  body.bodyBgChanged .home .container{
+    background-color: var(--bodyColor);
+  }
+  body.bodyBgChanged .home .container .title-home h1{
+    color: var(--colorBlack);
+  }
+  body.bodyBgChanged .home .container .title-home p{
+    color: var(--colorBlack);
+  }
+  body.bodyBgChanged .about .container {
+    background-color: rgba(129, 120, 120, 0.644);
+
+  }
+  body.bodyBgChanged .service {
+    background-color: var(--colorWhite);
+  }
+  body.bodyBgChanged .service .service-box div{
+    border-color: var(--bodyColor);
+  }
+  body.bodyBgChanged .education{
+    background-color:rgba(129, 120, 120, 0.644) ;
+  }
+  body.bodyBgChanged .education .htmlcss{
+    color: var(--colorWhite);
+  }
+  body.bodyBgChanged .education .tailwindJavascript{
+    color: var(--colorWhite);
+  }
+  body.bodyBgChanged .projects .container .project_list .flex-columns div .project .overlay {
+    color: var(--colorWhite);
+  }
+  body.bodyBgChanged .contact .container .box div{
+    background-color: rgba(129, 120, 120, 0.644);
+  }
+  body.bodyBgChanged .contact .container .form{
+    background-color: rgba(129, 120, 120, 0.644);
+  }
+  body.bodyBgChanged .contact .container .form input::placeholder{
+    color: var(--colorWhite);
+  }
+  body.bodyBgChanged .contact .container .form textarea::placeholder{
+    color: var(--colorWhite);
+  }
+  body.bodyBgChanged .newsletter .container h2{
+  color: var(--colorWhite);
+  }
+  body.bodyBgChanged footer .container{
+    background-color: rgba(129, 120, 120, 0.644);
+    color: var(--colorWhite);
+  }
+
+/* ================================navbar styles ======================================= */
+.navbar .container{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  align-items: center;
+  background-color: var(--bgColor);
+  height: 90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  transition:  background .5s ease;
+}
+.navbar .container.Active-bg{
+  background-color: var(--colorWhite);
+  box-shadow: -2px 1px 0px 1px #111823;
+}
+.navbar .container .logo img{
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  user-select: none;
+}
+.navbar .container .links ul{
+  display: flex;
+  gap: 4rem;
+}
+.navbar .container .links ul li{
+  list-style: none;
+}
+.navbar .container .links ul li a{
+  color: var(--colorWhite);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: .8rem;
+  transition: color .5s ease;
+}
+.navbar .container.Active-bg .links ul li a{
+  color: var(--bodyBg);
+}
+.navbar .container .links ul li a:hover{
+  color: var(--primaryColor);
+}
+.navbar .container .links .sombre i{
+  font-size: 1.5rem;
+  color: var(--colorWhite);
+}
+.navbar .container.Active-bg .links .sombre i{
+  color: var(--colorBlack);
+}
+
+.navbar .container .toggle-btn{
+  display: none;
+  gap: 2rem;
+}
+.navbar .container .toggle-btn i{
+  font-size: 2rem;
+  color: var(--colorWhite);
+  transition: .5s ease;
+  cursor: pointer;
+} 
+.navbar .container.Active-bg .toggle-btn i{
+  color: var(--colorBlack);
+}
+
+/* ====================Home styles ==================== */
+.home .container{
+  margin: 0 auto;
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: var(--grayColor);
+  padding-top: 10rem;
+  display: flex;
+  gap: 10%;
+  height:  100vh;
+  transition:  background .5s ease;
+}
+.home .container .title-home{
+  width: 50%;
+}
+.home .container .title-home h1{
+  text-transform: uppercase;
+  font-size: 2.1rem;
+  font-weight: bolder;
+  line-height: 3rem;
+  color: var(--colorWhite);
+  margin-bottom: 2rem;
+}
+.home .container .title-home h1 strong{
+  color: var(--primaryColor)
+}
+.home .container .title-home p{
+  color: var(--colorWhite);
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+.home .container .title-home a button{
+  height: 8vh;
+  width: 30%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--primaryColor);
+  border: none;
+  border-radius: 10px;
+  transition: .5s ease;
+}
+.home .container .title-home a button:hover{
+  width: 31%;
+  height: 8.5vh;
+  font-size: 1.1rem;
+}
+.home .container .img-home{
+  width: 30%;
+}
+.home .container .img-home img{
+  width: 100%;
+  border-top-right-radius: 30%;
+  border: 5px solid var(--primaryColor);
+  border-bottom-left-radius: 30%;
+}
+
+/* ===================About Styles =============== */
+.about .container{
+  margin: 0 auto;
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: var(--bgColor);
+  padding-top: 5rem;
+  display: flex;
+  gap: 3rem;
+  transition:  background .5s ease;
+}
+.about .container .about-title{
+  width: 90%;
+}
+.about .container .about-title h2{
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--primaryColor);
+  margin-bottom: 1.5rem;
+}
+.about .container .about-title h1{
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  line-height: 3rem;
+  margin-bottom: 1.5rem;
+}
+.about .container .about-title .about-paragraph{
+  display: flex;
+  gap: 2rem;
+}
+.about .container .about-title .about-paragraph .div-empty{
+  height: .2rem;
+  width: 50%;
+  background-color: var(--primaryColor);
+}
+.about .container .about-title .about-paragraph .paragraph p{
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: var(--colorWhite);
+  margin-bottom: 2rem;
+}
+.about .container .about-title a{
+  text-decoration: none;
+}
+.about .container .about-title a button{
+  height: 8vh;
+  width: 30%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--primaryColor);
+  border: none;
+  border-radius: 10px;
+  transition: .5s ease;
+}
+.about .container .about-title a button:hover{
+  width: 31%;
+  height: 8.5vh;
+  font-size: 1.1rem;
+}
+.about .container .about-image{
+  width: 50%;
+  margin-top: 2rem;
+}
+.about .container .about-image img{
+  width: 100%;
+  border-top: 10px solid var(--primaryColor);
+  border-right: 10px solid var(--primaryColor);
+  border-radius: 10px;
+}
+
+/* ==============================service styles ========================= */
+.service {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: var(--bodyBg);
+  margin-top: 3rem;
+  transition:  background .5s ease;
+}
+.service .service-title{
+  margin-bottom: 3rem;
+}
+.service .service-title h2{
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--primaryColor);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.service .service-title h3{
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.service .service-box{
+  display: flex;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+.service .service-box div{
+  border: 0.4px solid white;
+  border-radius: 10px;
+  padding: 0 2rem 2rem 2rem;
+}
+.service .service-box div i{
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: -1.5rem;
+}
+.service .service-box div h2{
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+.service .service-box div p{
+  text-align: center;
+}
+.service .education{
+  margin-top: 3rem;
+  background-color: var(--bgColor);
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  padding-left: 5%;
+  padding-top: 5rem;
+  padding-right: 5%;
+  transition: background .5s ease-in-out;
+}
+.service .education .education-title{
+  padding: 0 4rem;
+  margin-bottom: 2rem;
+}
+.service .education .education-title h1{
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--primaryColor);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.service .education .education-title h2{
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.service .education .education-title div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.service .education .education-title div h1{
+  border: 1px solid var(--primaryColor);
+  width: 15%;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.service .education .education-title h3{
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.service .education .education-title p{
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.service .education .htmlcss{
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.service .education .htmlcss div{
+  width: 50%;
+  background-color: var(--grayColor);
+  height: 10vh;
+  border-bottom: 2vh solid var(--primaryColor);
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  padding-left: 1rem;
+}
+.service .education .htmlcss div h3{
+  font-weight: 500;
+}
+.service .education .tailwindJavascript{
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.service .education .tailwindJavascript div{
+  width: 50%;
+  background-color: var(--grayColor);
+  height: 10vh;
+  border-bottom: 2vh solid var(--primaryColor);
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  padding-left: 1rem;
+}
+.service .education .tailwindJavascript div h3{
+  font-weight: 500;
+}
+
+/* =============================== project styles ======================== */
+.projects{
+  position:relative;
+  margin: 0 auto;
+  width: 90%;
+  padding-left: 5%;
+  top: 43rem;
+  padding-right: 5%;
+}
+.projects .container h3.section-title{
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--primaryColor);
+  margin-bottom: 1.5rem;
+  text-align: start;
+}
+.projects .container h5.section-paragraph{
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+.projects .container .project_list .flex-columns{
+  display: flex;
+  gap: 1rem;
+}
+.projects .container .project_list .flex-columns .columns1{
+  width: 50%;
+  height: 90vh;
+}
+.projects .container .project_list .flex-columns .columns1 .project{
+  width: 100%;
+  height: 80vh;
+}
+.projects .container .project_list .flex-columns .columns1 .project img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+.projects .container .project_list .flex-columns .columns1 .project .overlay{
+  background-color: #111823b0;
+  position:relative;
+  width: 100%;
+  /* height: 80vh; */
+  height: 100%;
+  /* bottom: 36.5rem; */
+  bottom: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 3rem;
+  transform: translateY(100%);
+  visibility: hidden;
+  transition: transform 0.3s, visibility 0s;;
+}
+.projects .container .project_list .flex-columns .columns1 .project:hover .overlay{
+  transform: translateX(0);
+  visibility: visible;
+  transition: transform 0.3s, visibility 0.5s;;
+}
+.projects .container .project_list .flex-columns
+.columns1 .project .overlay .flex{
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+}
+.projects .container .project_list .flex-columns
+.columns1 .project .overlay .flex .line-green{
+  width: 40%;
+  height: 2px ;
+  background-color: var(--primaryColor);
+}
+.projects .container .project_list .flex-columns .columns2{
+  width: 50%;
+  height: 90vh;
+  margin-top: -3rem;
+}
+.projects .container .project_list .flex-columns .columns2 .project{
+  width: 100%;
+  height: 80vh;
+}
+.projects .container .project_list .flex-columns .columns2 .project img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+.projects .container .project_list .flex-columns .columns2 .project .overlay{
+  background-color: #111823b0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  bottom: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 3rem;
+  transform: translateY(100%);
+  visibility: hidden;
+  transition: transform 0.3s, visibility 0s;;
+}
+.projects .container .project_list .flex-columns .columns2 .project:hover .overlay{
+  visibility: visible;
+  transition: transform 0.3s , visibility 0s ;
+  transform: translateY(0);
+}
+.projects .container .project_list .flex-columns
+.columns2 .project .overlay .flex{
+  width: 100%;
+  padding: 1rem;
+}
+.projects .container .project_list .flex-columns
+.columns2 .project .overlay .flex .line-green{
+  width: 100%;
+  height: 2px ;
+  background-color: var(--primaryColor);
+}
+/* ================================= client-reviews styles  */
+.client-reviews {
+  position: relative;
+  top: 45rem;
+}
+.client-reviews .container{
+  width: 90%;
+  margin: 0 auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+}
+.client-reviews .container .title h3{
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--primaryColor);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.client-reviews .container .title h2{
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.client-reviews .container .box{
+  display: flex;
+  gap: 2rem;
+}
+.client-reviews .container .box .div{
+  border: 1px solid var(--bodyColor);
+  padding: 1rem 2rem;
+
+  border-radius: 5px ;
+}
+.client-reviews .container .box .div .img{
+  display: flex;
+  justify-content: space-between;
+}
+.client-reviews .container .box .div .img i{
+  margin-top: 1rem;
+  color: #ffa500;
+  user-select: none;
+}
+.client-reviews .container .box .div .img img{
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+  position: relative;
+  right: 2rem;
+  top:-3.5rem;
+  user-select: none;
+}
+.client-reviews .container .box .div h3{
+  margin-top: -2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+.client-reviews .container .box .div h4{
+  color: var(--bodyColor);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.client-reviews .container .box .div .p{
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.client-reviews .container .box .div .p p{
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+.client-reviews .container .box .div .p h5{
+  font-size: 4rem;
+  color: var(--primaryColor);
+  user-select: none;
+}
+
+/* ============================= contact styles =================== */
+.contact{
+  position: relative;
+  bottom: -50rem;
+}
+.contact .container{
+  width: 90%;
+  margin: 0 auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  gap: 2rem;
+  
+}
+.contact .container .title{
+  width: 50%;
+  margin-bottom: 2rem;
+}
+.contact .container .title h1{
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--primaryColor);
+  margin-bottom: 1rem;
+  text-align: start;
+}
+.contact .container .title h2{
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: start;
+}
+.contact .container .title p{
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.contact .container .title .box{
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+.contact .container .title .box div{
+  background-color: var(--bgColor);
+  width: 50%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.contact .container .title .box div i{
+  font-size: 2rem;
+  color: var(--primaryColor);
+}
+.contact .container .title .box div h3{
+  font-size: 1.5rem;
+}
+.contact .container .title .box div h5{
+  font-size: 1rem;
+}
+.contact .container .form{
+  width: 50%;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: var(--bgColor);
+}
+.contact .container .form h3{
+  margin-bottom: 1rem;
+}
+.contact .container .form p{
+  margin-bottom: 1rem;
+}
+.contact .container .form form input{
+  width: 100%;
+  height: 8vh;
+  margin-bottom: 1rem;
+  border: 2px solid var(--primaryColor);
+  outline: none;
+  background-color: transparent;
+  padding-left: 1rem;
+  border-radius: 2px;
+  caret-color: var(--colorWhite);
+  color: var(--colorWhite);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.contact .container .form form input::placeholder{
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--bodyColor);
+}
+.contact .container .form form input:focus{
+  border: 3px solid var(--primaryColor);
+}
+.contact .container .form form textarea{
+  height: 20vh;
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid var(--primaryColor);
+  border-radius: 2px;
+  padding: 1rem ;
+  color: var(--colorWhite);
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.contact .container .form form textarea::placeholder{
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--bodyColor);
+}
+.contact .container .form form textarea:focus{
+  border: 3px solid var(--primaryColor);
+}
+.contact .container .form form #input{
+  height: 8vh;
+  width: 30%;
+  background-color: var(--primaryColor);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--colorBlack);
+}
+/* ==================================== newsletter styles ============== */
+.newsletter{
+position: relative;
+bottom: -55rem;
+}
+.newsletter .container{
+  width: 90%;
+  margin: 0  auto; 
+  height: 60vh;
+  background: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)), url(./img/Didier3.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.newsletter .container h2{
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.newsletter .container form{
+  border: 2px solid var(--primaryColor);
+  height: 13vh;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-radius: 5px ;
+}
+.newsletter .container form input:nth-child(1){
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  caret-color: var(--colorWhite);
+  width: 60%;
+  color: var(--colorWhite);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.newsletter .container form input::placeholder{
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--bodyColor);
+}
+.newsletter .container form input:nth-child(2){
+  height: 70%;
+  width: 30%;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--primaryColor);
+  border: none;
+  cursor: pointer;
+}
+
+/* /====================================footer styles ================ */
+footer{
+  position: relative;
+  bottom: -55rem;
+}
+footer .container{
+  width: 90%;
+  margin: 0 auto;
+  background-color: var(--bgColor);
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 2rem;
+  transition: background .5s ease-in-out;
+}
+footer .container .icon{
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+footer .container .icon div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+footer .container .icon div i{
+  font-size: 2rem;
+  color: var(--primaryColor);
+}
+footer .container .icon div h2{
+  font-size: 1rem;
+}
+footer .container .line{
+  height: 1px;
+  width: 100%;
+  background-color: var(--primaryColor);
+  margin-bottom: 2rem;
+}
+footer .container .end{
+  display: flex;
+  gap: 2rem;
+}
+footer .container .end h4{
+  font-size: 1rem;
+}
+footer .container .end ul{
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+footer .container .end ul a{
+  text-decoration: none;
+}
+footer .container .end ul a li{
+  list-style: none;
+  color: var(--colorWhite);
+  transition: color .3s ease-in-out;
+  font-size: 0.8rem;
+}
+footer .container .end ul a li:hover{
+  color: var(--primaryColor);
+}
+
+/*================================== Les Media Query ==================== */
+@media(min-width:1024px) and (max-width:1280px){
+  .contact .container .form form #input{
+    width: 50%;
+  }
+}
+
+@media(min-width:901px) and (max-width:1024px){
+  .home .container .title-home h1{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .home .container .title-home p{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .home .container .title-home a button{
+    width: 40%;
+  }
+  .home .container .title-home a button:hover{
+    width: 40.1%;
+    height: 8vh;
+    font-size: 1rem;
+  }
+  .home .container .img-home img{
+    border-radius: 20px;
+  }
+  /* about styles */
+  .about .container .about-title h2{
+    font-size: 1rem;
+  }
+  .about .container .about-title h1{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .about .container .about-title .about-paragraph .paragraph p{
+    font-size: 0.8rem;
+  }
+  .about .container .about-title .about-paragraph a button{
+    width: 40%;
+  }
+  .about .container .about-title .about-paragraph a button:hover{
+    width: 40.1%;
+    height: 8vh;
+    font-size: 1rem;
+  }
+  /* project responsive */
+  .projects .container h5.section-paragraph{
+    text-align: center;
+  }
+  .contact .container .form form #input{
+    width: 100%;
+  }
+}
+
+@media(min-width:768px) and (max-width:900px){
+  /* navbar responsive  */
+  .navbar .container{
+    padding: 1rem;
+    padding-right: 2rem;
+  }
+  .navbar .container .links ul{
+    gap: 1.5rem;
+    display: flex
+  }
+  .navbar .container .toggle-btn{
+    display: none;
+  }
+
+  /* home responsive */
+  .home .container{
+    height: 80vh;
+  }
+  .home .container .title-home{
+    width: 60%;
+    
+  }
+  .home .container .title-home h1{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .home .container .title-home p{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .home .container .title-home a button{
+    width: 40%;
+    font-size: 1rem;
+  }
+  .home .container .title-home a button:hover{
+    width: 40.1%;
+    font-size: 0.8rem;
+  }
+  .home .container .img-home img{
+    border-radius: 10px;
+  }
+  
+
+  /* about responsive  */
+  .about .container{
+    position: relative;
+    top: 0rem;
+    padding-top: 2rem;
+    flex-direction: column;
+    gap: 0;
+  }
+  .about .container .about-title{
+    width: 100%;
+  }
+  .about .container .about-title h2{
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about .container .about-title h1{
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    margin-bottom: 1rem;
+  }
+  .about .container .about-title .about-paragraph{
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .about .container .about-title .about-paragraph .div-empty{
+    width: 100%;
+    height: 1px;
+  }
+  .about .container .about-title .about-paragraph .paragraph p{
+    font-size: .9rem;
+    margin-bottom: 1rem;
+  }
+  .about .container .about-title .about-paragraph a button{
+    width: 50%;
+    font-size: .9rem;
+    height: 5vh;
+    transition: .5s ease;
+  }
+  .about .container .about-image{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40vh;
+    margin-bottom: 2rem;
+  }
+  .about .container .about-image img{
+    height: 100%;
+  }
+  .service .service-title h3{
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+  .service .education .education-title{
+    padding: 0;
+  }
+  .service .education .education-title h2{
+    font-size: 1.5rem;
+
+  }
+  .service .service-box{
+    flex-direction: column;
+    gap: 3rem;
+  }
+  /* project responsive  */
+  .projects .container h3.section-title{
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .projects .container h5.section-paragraph{
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .projects .container .project_list
+  .flex-columns .columns1 .overlay h2{
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .projects .container .project_list .flex-columns .columns1 .project .overlay{
+    padding: 0 0.5rem;
+  }
+  .projects .container .project_list .flex-columns .columns1 .project .overlay .flex .line-green{
+    width: 20%;
+  }
+  .projects .container .project_list
+  .flex-columns .columns2 .overlay h2{
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .client-reviews .container .title h3{
+    font-size: 1.2rem;
+  }
+  .client-reviews .container .box .div .img img{
+    width: 5.5rem;
+    height: 5.5rem;
+    top: rem;
+    right: -1rem;
+  }
+  /*  contact responsive  */
+  .contact .container{
+    flex-direction: column;
+    gap: 0;
+  }
+  .contact .container .title{
+    width: 100%;
+  }
+  .contact .container .title h1{
+    text-align: center;
+  }
+  .contact .container .title h2{
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .contact .container .title p{
+    font-size: .9rem;
+  }
+  .contact .container .form{
+    width: 100%;
+  }
+  .contact .container .form p{
+    font-size: 0.9rem;
+  }
+}
+@media(min-width:480px) and (max-width:767px){
+  /* [data-aos]{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  } */
+  /* navbarStyles  */
+  .navbar .container{
+    background-color: var(--bgColor);
+    display: flex;
+    height: 15vh;
+    padding: 1rem;
+  }
+  .navbar .container .links ul{
+    width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #191e25e0;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    display: none;
+  }
+  .navbar .container .links ul.LinksShowed{
+    display: flex;
+  }
+  .navbar .container.Active-bg .links ul.LinksShowed li a{
+    color: var(--colorWhite);
+  }
+  .navbar .container.Active-bg .links ul.LinksShowed li a:hover{
+    color: var(--primaryColor);
+  }
+  .navbar .container .logo img{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+  }
+  .navbar .container .toggle-btn{
+    display: flex;
+    z-index: 6;
+    
+  }
+  .navbar .container .toggle-btn i{
+    font-size: 1.5rem;
+  }
+  .navbar .container .toggle-btn i.fa-xmark{
+    display: none;
+  }
+  .navbar .container .toggle-btn i.faXMarkShowed{
+    display: flex;
+  }
+  .navbar .container .toggle-btn i.faBarsNone{
+    display: none;
+  }
+
+  /* home responsive  */
+  .home .container {
+    position: relative;
+    top: -3rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .home .container .title-home{
+    width: 100%;
+  }
+  .home .container .title-home h1{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    margin-bottom: .3rem;
+  }
+  .home .container .title-home p{
+    font-size: .9rem;
+    margin-bottom: 1rem;
+    line-height: 1rem;
+  }
+  .home .container .title-home a{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-decoration: none;
+  }
+  .home .container .title-home a button{
+    width: 35%;
+    font-size: .9rem;
+    height: 5vh;
+    transition: .5s ease;
+  }
+  .home .container .title-home a button:hover{
+    width: 35.2%;
+    height: 5.1vh;
+    font-size: .85rem;
+  }
+  .home .container .img-home{
+    width: 100%;
+    height: 30vh;
+  }
+  .home .container .img-home img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+  }
+
+  /* about responsive  */
+  .about .container{
+    position: relative;
+    top: -3rem;
+    padding-top: 2rem;
+    flex-direction: column;
+    gap: 0;
+  }
+  .about .container .about-title{
+    width: 100%;
+  }
+  .about .container .about-title h2{
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about .container .about-title h1{
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    margin-bottom: 1rem;
+  }
+  .about .container .about-title .about-paragraph{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .about .container .about-title .about-paragraph .div-empty{
+    width: 100%;
+    height: 1px;
+  }
+  .about .container .about-title .about-paragraph .paragraph p{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .about .container .about-title .about-paragraph a button{
+    width: 35%;
+    font-size: .9rem;
+    height: 5vh;
+    transition: .5s ease;
+    
+  }
+  .about .container .about-title .about-paragraph a button:hover{
+    width: 35.2%;
+    height: 5.1vh;
+    font-size: .85rem;
+  }
+  .about .container .about-image{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40vh;
+    margin-bottom: 2rem;
+  }
+  .about .container .about-image img{
+    height: 100%;
+  }
+
+
+  /*  service responsive  */
+  .service{
+    padding-top: 0%;
+  }
+  .service .service-title{
+    margin-bottom: 1rem;
+  }
+  .service .service-title h2{
+    margin-bottom: 1rem;
+  }
+  .service .service-title h3{
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+  .service .service-box{
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .service .service-box div i{
+    font-size: 1.8rem;
+    top: -0.9rem;
+    width: 100%;
+  }
+  .service .service-box div h2{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .service .service-box div p{
+    font-size: 1rem;
+  }
+  .service .education .education-title{
+    padding: 0;
+  }
+  .service .education .education-title h1{
+    margin-bottom: 1rem;
+  }
+  .service .education .education-title h2{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .service .education .education-title div h1{
+    width: 50%;
+    margin-bottom: 1rem;
+  }
+  .service .education .education-title h3{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .service .education .education-title p{
+    font-size: .9rem;
+  }
+  .service .education .htmlcss{
+    width: 100%;
+    gap: 0.5rem;
+    flex-direction: column;
+    margin-bottom: .5rem;
+  }
+  .service .education .htmlcss div{
+    width: 100%;
+    height: 8vh;
+    border-bottom: 1vh solid var(--primaryColor);
+  }
+  .service .education .htmlcss div h3{
+    font-size: 1rem;
+  }
+  .service .education .tailwindJavascript{
+    width: 100%;
+    gap: 0.5rem;
+    flex-direction: column;
+    margin-bottom: .5rem;
+  }
+  .service .education .tailwindJavascript div{
+    width: 100%;
+    height: 8vh;
+    border-bottom: 1vh solid var(--primaryColor);
+  }
+  .service .education .tailwindJavascript div h3{
+    font-size: 1rem;
+  }
+  
+
+  /* project responsive */
+
+  .projects .container h3.section-title{
+    text-align: center;
+  }
+  .projects .container h5.section-paragraph{
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .projects .container .project_list .flex-columns{
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  .projects .container .project_list .flex-columns .columns1{
+    width: 100%;
+  }
+  .projects .container .project_list .flex-columns .columns1 .project{
+    width: 100%;
+  }
+  .projects .container .project_list .flex-columns .columns1 .project2{
+    margin-top: -3rem;
+  }
+  .projects .container .project_list .flex-columns .columns1 .project img{
+    width: 100%;
+  }
+  .projects .container .project_list
+  .flex-columns .columns1 .project .overlay h2{
+    font-size: 1.3rem;
+  }
+
+  .projects .container .project_list .flex-columns .columns2{
+    width: 100%;
+  }
+  .projects .container .project_list .flex-columns .columns2 .project{
+    width: 100%;
+  }
+  .projects .container .project_list .flex-columns .columns2 .project1{
+    margin-top: -3rem;
+  }
+  .projects .container .project_list .flex-columns .columns2 .project2{
+    margin-top: -3rem;
+  }
+  .projects .container .project_list .flex-columns .columns2 .project img{
+    width: 100%;
+  }
+  .projects .container .project_list
+  .flex-columns .columns2 .project .overlay h2{
+    font-size: 1.3rem;
+  }
+  .client-reviews .container .title h3{
+    margin-bottom: 0.5rem;
+  }
+  .client-reviews .container .title h2{
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .client-reviews .container .box{
+    flex-direction: column;
+  }
+  .client-reviews .container .box{
+    gap: 2.5rem;
+  }
+  .client-reviews .container .box .div .img img{
+    width: 5rem;
+    height:5rem;
+  }
+
+/* contact responsive  */
+.contact .container{
+  flex-direction: column;
+  gap: 0;
+}
+.contact .container .title{
+  width: 100%;
+}
+.contact .container .title h1{
+  text-align: center;
+}
+.contact .container .title h2{
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.contact .container .title p{
+  font-size: .9rem;
+}
+.contact .container .form{
+  width: 100%;
+}
+.contact .container .form p{
+  font-size: 0.9rem;
+}
+.contact .container .form form #input{
+  width: 50%;
+}
+
+.newsletter .container h2{
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.newsletter .container form{
+  width: 90%;
+}
+
+/* footer responsive  */
+footer .container .icon{
+  flex-direction: column;
+  gap: 1.5rem;
+}
+footer .container .icon div{
+  display: flex;
+  width: 100%;
+}
+footer .container .end{
+  flex-direction: column;
+  gap: 1rem;
+}
+footer .container .end h4{
+  width: 100%;
+  font-size: 0.9rem;
+  text-align: center;
+}
+footer .container .end ul{
+  width: 100%;
+}
+}
+@media(min-width:0px) and (max-width:479px){
+  /* [data-aos]{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  } */
+  /* navbar responsive  */
+  .navbar .container{
+    height: 10vh;
+    padding: .5rem;
+  }
+  .navbar .container .links ul{
+    width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #191e25e0;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    display: none;
+  }
+  .navbar .container .links ul.LinksShowed{
+    display: flex;
+  }
+  .navbar .container.Active-bg .links ul.LinksShowed li a{
+    color: var(--colorWhite);
+  }
+  
+  .navbar .container.Active-bg .links ul.LinksShowed li a:hover{
+    color: var(--primaryColor);
+  }
+  .navbar .container .logo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+  }
+  .navbar .container .toggle-btn{
+    display: flex;
+    z-index: 6;
+    
+  }
+  .navbar .container .toggle-btn i{
+    font-size: 1.5rem;
+  }
+  .navbar .container .toggle-btn i.fa-xmark{
+    display: none;
+  }
+  .navbar .container .toggle-btn i.faXMarkShowed{
+    display: flex;
+  }
+  .navbar .container .toggle-btn i.faBarsNone{
+    display: none;
+  }
+
+  /* home responsive  */
+  .home .container {
+    position: relative;
+    top: -4rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .home .container .title-home{
+    width: 100%;
+  }
+  .home .container .title-home h1{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: .5rem;
+  }
+  .home .container .title-home p{
+    font-size: .8rem;
+    margin-bottom: 1rem;
+  }
+  .home .container .title-home a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  .home .container .title-home a button{
+    width: 50%;
+    font-size: .9rem;
+    height: 5vh;
+    transition: .5s ease;
+  }
+  .home .container .title-home a button:hover{
+    width: 50.5%;
+    height: 5.5vh;
+    font-size: .85rem;
+  }
+  .home .container .img-home{
+    width: 100%;
+    height: 30vh;
+  }
+  .home .container .img-home img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+  }
+
+  /*  about responsive  */
+  .about .container{
+    position: relative;
+    top: -4rem;
+    padding-top: 2rem;
+    flex-direction: column;
+    gap: 0;
+  }
+  .about .container .about-title{
+    width: 100%;
+  }
+  .about .container .about-title h2{
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about .container .about-title h1{
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    margin-bottom: 1rem;
+  }
+  .about .container .about-title .about-paragraph{
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .about .container .about-title .about-paragraph .div-empty{
+    width: 100%;
+    height: 1px;
+  }
+  .about .container .about-title .about-paragraph .paragraph p{
+    font-size: .9rem;
+    margin-bottom: 1rem;
+  }
+  .about .container .about-title .about-paragraph a button{
+    width: 60%;
+    font-size: .9rem;
+    height: 5vh;
+    transition: .5s ease;
+  }
+  .about .container .about-image{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40vh;
+    margin-bottom: 2rem;
+  }
+  .about .container .about-image img{
+    height: 100%;
+  }
+
+  /* service responsive */
+  .service{
+    padding-top: 0%;
+  }
+  .service .service-title{
+    margin-bottom: 1rem;
+  }
+  .service .service-title h2{
+    margin-bottom: 1rem;
+  }
+  .service .service-title h3{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+  .service .service-box{
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .service .service-box div i{
+    font-size: 1.5rem;
+    top: -0.8rem;
+    width: 100%;
+  }
+  .service .service-box div h2{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .service .service-box div p{
+    font-size: 0.9rem;
+  }
+  .service .education .education-title{
+    padding: 0;
+  }
+  .service .education .education-title h1{
+    margin-bottom: 1rem;
+  }
+  .service .education .education-title h2{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .service .education .education-title div h1{
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+  .service .education .education-title h3{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .service .education .education-title p{
+    font-size: .8rem;
+  }
+  .service .education .htmlcss{
+    width: 100%;
+    gap: 0.5rem;
+    flex-direction: column;
+    margin-bottom: .5rem;
+  }
+  .service .education .htmlcss div{
+    width: 100%;
+    height: 8vh;
+    border-bottom: 1vh solid var(--primaryColor);
+  }
+  .service .education .htmlcss div h3{
+    font-size: 0.9rem;
+  }
+  .service .education .tailwindJavascript{
+    width: 100%;
+    gap: 0.5rem;
+    flex-direction: column;
+    margin-bottom: .5rem;
+  }
+  .service .education .tailwindJavascript div{
+    width: 100%;
+    height: 8vh;
+    border-bottom: 1vh solid var(--primaryColor);
+  }
+  .service .education .tailwindJavascript div h3{
+    font-size: .9rem;
+  }
+
+  /* project responsive */
+  .projects{
+    padding-top: 2rem;
+  }
+
+  .projects .container h3.section-title{
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .projects .container h5.section-paragraph{
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .projects .container .project_list .flex-columns{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .projects .container .project_list .flex-columns .columns1{
+    width: 100%;
+    height: 60vh;
+  }
+  .projects .container .project_list .flex-columns .columns1 .project{
+    height: 100%;
+    width: 100%;
+  }
+  .projects .container .project_list .flex-columns .columns1 .project img{
+    height: 100%;
+    width: 100%;
+  }
+  .projects .container .project_list .flex-columns 
+  .columns1 .project .overlay{
+    width: 100%;
+    visibility: visible;
+    position: relative;
+    top: -100%;
+    height: 100%;
+    padding-bottom: 0;
+    transform: translateY(100%);
+    visibility: hidden;
+    /* bottom: 0; */
+  }
+  .projects .container .project_list .flex-columns 
+  .columns1 .project .overlay h2{
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .projects .container .project_list .flex-columns 
+  .columns1 .project .overlay .flex{
+    gap: 0.5rem;
+    margin-top: 0;
+    width: 100%;
+  }
+  .projects .container .project_list .flex-columns 
+  .columns1 .project:hover .overlay{
+    transform: translateY(0);
+    visibility: visible;
+  }
+  .projects .container .project_list .flex-columns 
+  .columns1 .project .overlay .flex .line-green{
+    width: 20%;
+    text-align: center;
+  }
+  .projects .container .project_list .flex-columns 
+  .columns1 .project .overlay .flex p{
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .projects .container .project_list .flex-columns .columns2{
+    width: 100%;
+    height: 60vh;
+    margin-top: 1rem;
+  }
+  .projects .container .project_list .flex-columns .columns2 .project{
+    height: 100%;
+    width: 100%;
+  }
+  .projects .container .project_list .flex-columns .columns2 .project img{
+    height: 100%;
+    width: 100%;
+  }
+  .projects .container .project_list .flex-columns 
+  .columns2 .project .overlay{
+    width: 100%;
+    visibility: visible;
+    position: relative;
+    top: -100%;
+    height: 100%;
+    padding-bottom: 0;
+    transform: translateY(100%);
+    visibility: hidden;
+    /* bottom: 0; */
+  }
+  .projects .container .project_list .flex-columns 
+  .columns2 .project .overlay h2{
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .projects .container .project_list .flex-columns 
+  .columns2 .project .overlay .flex{
+    gap: 0rem;
+    margin-top: 0;
+    width: 100%;
+  }
+  .projects .container .project_list .flex-columns 
+  .columns2 .project .overlay .flex .line-green{
+    margin-top: 0;
+  }
+  .projects .container .project_list .flex-columns 
+  .columns2 .project:hover .overlay{
+    transform: translateY(0);
+    visibility: visible;
+  }
+  .client-reviews .container .title h3{
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .client-reviews .container .title h2{
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .client-reviews .container .box{
+    width: 100%;
+    flex-direction: column;
+  }
+  .client-reviews .container .box .div{
+    width: 100%;
+  }
+  .client-reviews .container .box .div .img{
+    margin-bottom: 1rem;
+  }
+  .client-reviews .container .box .div .img img{
+    width: 3.5rem;
+    height: 3.5rem;
+    top: -2.5rem;
+    right: -0.5rem;
+  }
+  .client-reviews .container .box .div .img i{
+    font-size: 0.9rem;
+  }
+  .client-reviews .container .box .div h3{
+    font-size: 1.2rem;
+  }
+  .client-reviews .container .box .div h4{
+    font-size: 0.8rem;
+  }
+  .client-reviews .container .box .div .p p{
+    font-size: 0.8rem;
+  }
+  .client-reviews .container .box .div .p h5{
+    font-size: 2rem;
+  }
+
+  /* contact responsive */
+  .contact .container{
+    flex-direction: column;
+    gap: 0;
+  }
+  .contact .container .title{
+    width: 100%;
+  }
+  .contact .container .title h1{
+    text-align: center;
+    font-size: .9rem;
+    margin-bottom: .5rem;
+  }
+  .contact .container .title h2{
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .contact .container .title p{
+    font-size: 0.8rem;
+  }
+  .contact .container .title .box{
+    width: 100%;
+  }
+  .contact .container .title .box div i{
+    font-size: 1rem;
+  }
+  .contact .container .title .box div h3{
+    font-size: 1rem;
+  }
+  .contact .container .title .box div h5{
+    font-size: 0.9rem;
+  }
+  .contact .container .form{
+    width: 100%;
+  }
+  .contact .container .form h3{
+    text-align: center;
+    font-size: 1rem;
+  }
+  .contact .container .form p{
+    font-size: 0.8rem;
+  }
+  .contact .container .form form input{
+    font-size: 0.8rem;
+  }
+  .contact .container .form form #input{
+    width: 100%;
+  }
+
+  .newsletter .container{
+    background-position: top;
+  }
+  .newsletter .container h2{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .newsletter .container form{
+    width: 90%;
+    height: 9vh;
+  }
+  .newsletter .container form input:nth-child(1){
+    font-size: 0.9rem;
+  }
+  .newsletter .container form input:nth-child(1)::placeholder{
+    font-size: 0.9rem;
+  }
+  .newsletter .container form input:nth-child(2){
+    font-size: 0.9rem;
+  }
+  /* footer responsive  */
+  footer .container .icon{
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  footer .container .icon div{
+    display: flex;
+    width: 100%;
+  }
+  footer .container .icon div i{
+    font-size: 2rem;
+  }
+  footer .container .end{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  footer .container .end h4{
+    width: 100%;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  footer .container .end ul{
+    width: 100%;
+  }
+
+
+
+
+}
+
